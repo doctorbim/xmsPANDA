@@ -1,0 +1,55 @@
+
+
+1) Run these commands in R terminal:
+
+install.packages("devtools",repos="http://cran.r-project.org")
+source("http://bioconductor.org/biocLite.R")
+biocLite("GO.db",suppressUpdates=TRUE)
+biocLite("impute",suppressUpdates=TRUE)
+biocLite("qvalue",suppressUpdates=TRUE)
+biocLite("pcaMethods",suppressUpdates=TRUE)
+library(devtools)
+install_github("kuppal2/xmsPANDA")
+install.packages("https://cran.r-project.org/src/contrib/Archive/mixOmics/mixOmics_5.2.0.tar.gz",repos=NULL,type="source")
+
+
+
+2) 
+
+Installation on Windows:
+1) Download the "xmsPANDA_*.zip" file from https://github.com/kuppal2/xmsPANDA/blob/master/xmsPANDA_1.0.6.zip
+2) Open R
+3) Click on "Packages" under the menu bar
+4) Click on "Install packages from local zip files"
+5) Browse to the download location of the "xmsPANDA_*.zip" file
+6) Double click on the file and installation should begin
+7) Run "library(xmsPANDA)" command from within R to make sure the package
+is successfully installed
+
+xmsPANDA installation on Mac:
+1) Download the "xmsPANDA_*.tar.gz" file from https://github.com/kuppal2/xmsPANDA/blob/master/xmsPANDA_1.0.6.tar.gz
+2) Go to “Applications” 
+3) Open R
+4) Go to "Packages & Data” 
+5) Select "Local Source Package" option from the drop down menu 
+6) Click on "Install”
+7) Browse to the download location
+8) Click "Open"
+
+OR:
+
+1) Download "xmsPANDA_*.tar.gz" file from https://github.com/kuppal2/xmsPANDA/blob/master/xmsPANDA_1.0.6.tar.gz
+2) Go to MAC “Utilities” 
+3) Click on "Terminal"
+4) Browse to the download location of xmsPANDA_*.tar.gz
+5) Run "R CMD INSTALL xmsPANDA_*.tar.gz" to install
+6) Run "library(xmsPANDA)" command from within R to make sure the package
+is successfully installed
+
+
+xmsPANDA installation on Linux:
+1) Download "xmsPANDA_*.tar.gz" file fromhttps://github.com/kuppal2/xmsPANDA/blob/master/xmsPANDA_1.0.6.tar.gz
+2) Browse to the download location of xmsPANDA_*.tar.gz
+3) Run "R CMD INSTALL xmsPANDA_*.tar.gz" to install
+4) Run "library(xmsPANDA)" command from within R to make sure the package
+is successfully installed
