@@ -1,0 +1,12 @@
+xmsPANDA-package	xmsPANDA_v1.0.6-package
+data_preprocess	data_preprocess
+diffexp	diffexp
+do_wgcna	do_wgcna
+get_boxplots	get_boxplots
+get_hca	get_hca
+get_manhattanplots	get_manhattanplots
+get_pca	get_pca
+get_pcascoredistplots	get_pcascoredistplots
+get_roc	get_roc
+metabnet	metabnet
+xmsPANDA	xmsPANDA_v1.0.6-package

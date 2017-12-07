@@ -1,0 +1,11 @@
+data_preprocess         data_preprocess
+diffexp                 diffexp
+do_wgcna                do_wgcna
+get_boxplots            get_boxplots
+get_hca                 get_hca
+get_manhattanplots      get_manhattanplots
+get_pca                 Perfors PCA analysis
+get_pcascoredistplots   get_pcascoredistplots
+get_roc                 get_roc
+metabnet                metabnet
+xmsPANDA-package        xmsPANDA
