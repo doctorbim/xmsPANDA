@@ -25,8 +25,8 @@ demetabs_res<-diffexp(
         rsd.filt.list = c(10),
 
         ##3) arguments for feature seletion:
-        pairedanalysis = FALSE, featselmethod=c("rfesvm","limma","pls"),
-        fdrthresh = 0.1, fdrmethod="BH",
+        pairedanalysis = FALSE, featselmethod=c("limma"),pvalue.thresh=0.05,
+        fdrthresh = 0.05, fdrmethod="none",
         kfold=5,networktype="complete",
         samplermindex=NA,numtrees=5000,analysismode="classification",pls_vip_thresh = 2, num_nodes = 3,
         max_varsel = 10, pls_ncomp = 5,pred.eval.method="BER",rocfeatlist=seq(2,10,1),
