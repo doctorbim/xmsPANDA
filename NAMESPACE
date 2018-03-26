@@ -1,7 +1,0 @@
-<<<<<<< HEAD
-export(data_preprocess,metabnet,diffexp,getCorchild,docortest,do_rsd,do_pamr,get_hca,get_pca,do_plsda,get_boxplots,get_manhattanplots,do_wgcna,get_roc,get_pcascoredistplots,diffexp.child)
-import(limma, statmod, rgl, gplots, snow,mixOmics,doSNOW, foreach, e1071, WGCNA, randomForest, party,qvalue,fdrtool, GeneNet, corpcor, earth, pROC, multcomp, RColorBrewer, nlme, pls, plsgenomics,igraph,ROCR,flashClust,data.table,dplyr,plyr, RankAggreg, parallel, mclust,pcaMethods, pamr)
-=======
-export(data_preprocess,metabnet,diffexp,getCorchild,docortest,do_rsd,do_pamr,get_hca,get_pca,do_plsda,get_boxplots,get_manhattanplots,do_wgcna,get_roc,get_pcascoredistplots)
-import(limma, statmod, rgl, gplots, snow,mixOmics,doSNOW, foreach, e1071, WGCNA, randomForest, party,qvalue,fdrtool, GeneNet, corpcor, earth, pROC, multcomp, RColorBrewer, nlme, pls, plsgenomics,igraph,ROCR,flashClust,data.table,dplyr,plyr, RankAggreg, parallel, mclust,pcaMethods)
->>>>>>> 56db452834ab608b046bc57d12fd906a4f4b4574
