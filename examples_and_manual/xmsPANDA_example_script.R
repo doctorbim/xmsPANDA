@@ -1,10 +1,15 @@
 
+<<<<<<< HEAD
 #load xmsPANDA v1.0.7.2
+=======
+#load xmsPANDA v1.0.7.1
+>>>>>>> 56db452834ab608b046bc57d12fd906a4f4b4574
 library(xmsPANDA)
 
 
 feature_table_file<-"~/PANDA_Training/Mzmine_smokers_nonsmokers_PANDA.txt"
 class_labels_file<-"~/PANDA_Training/classlabels.txt"
+<<<<<<< HEAD
 outloc<-"~/PANDA_Training/testpandav1.0.7.2/"
 
 #start
@@ -53,6 +58,56 @@ sink(file=NULL)
 #end
 #####################################################
 
+=======
+outloc<-"~/PANDA_Training/testpandav1.0.7.1/"
+
+#start
+demetabs_res<-diffexp(
+        #1) arguments for input files
+        feature_table_file=feature_table_file,
+        parentoutput_dir=parentoutput_dir,
+        class_labels_file=class_labels_file,
+        input.intensity.scale="raw",
+
+        ##2) data preprocessing order: 1) summarization, 2) filtering by missing values, 3) imputation; 4) transformation and normalization
+        num_replicates = 1,
+        summarize.replicates =TRUE, summary.method="median",summary.na.replacement="halffeaturemin",
+        rep.max.missing.thresh=0.5,
+        all.missing.thresh=0.5, group.missing.thresh=0.8, missing.val=0,
+        log2transform = TRUE, medcenter=FALSE, znormtransform = FALSE,
+        quantile_norm = TRUE, lowess_norm = FALSE, madscaling = FALSE,
+        rsd.filt.list = c(10),
+
+        ##3) arguments for feature seletion:
+        pairedanalysis = FALSE, featselmethod=c("limma"),pvalue.thresh=0.05,
+        fdrthresh = 0.05, fdrmethod="none",
+        kfold=5,networktype="complete",
+        samplermindex=NA,numtrees=5000,analysismode="classification",pls_vip_thresh = 2, num_nodes = 3,
+        max_varsel = 10, pls_ncomp = 5,pred.eval.method="BER",rocfeatlist=seq(2,10,1),
+        rocfeatincrement=TRUE,
+        rocclassifier="svm",foldchangethresh=0,
+        optselect=TRUE,max_comp_sel=5,saveRda=FALSE,pls.permut.count=100,
+        pca.ellipse=TRUE,ellipse.conf.level=0.95,svm.acc.tolerance=5,pamr.threshold.select.max=FALSE,
+        aggregation.method="RankAggreg",
+
+        #4) arguments for WGCNA and global clustering analysis (HCA and EM clustering)
+        wgcnarsdthresh=30,WGCNAmodules=FALSE,globalclustering=FALSE,
+
+        #5) arguments for correlation and network analysis using the selected features
+        cor.method="spearman", abs.cor.thresh = 0.4, cor.fdrthresh=0.2,
+        globalcor=FALSE,target.metab.file=NA,
+        target.mzmatch.diff=10,target.rtmatch.diff=NA,max.cor.num=NA,
+
+        #6) arguments for graphical options
+        pca.cex.val=4,legendlocation="bottomleft",
+        net_node_colors=c("green","red"),
+        net_legend=FALSE,heatmap.col.opt="RdBu",sample.col.opt="rainbow",alphacol=0.3
+)
+sink(file=NULL)
+#end
+#####################################################
+
+>>>>>>> 56db452834ab608b046bc57d12fd906a4f4b4574
 
 ####################################################################
 #Options for featselmethod:
@@ -72,8 +127,13 @@ sink(file=NULL)
 #(mode=classification)
 #"wilcox": uses Wilcoxon tests for variable selection; 
 #(mode=classification)
+<<<<<<< HEAD
 #"RF": for random forest based feature selection (mode= regression or classification)
 #"RFconditional": for conditional random forest based feature selection (mode= regression or classification)
+=======
+#"RF": for random forest based feature selection (mode= regression or classification)
+#"RFconditional": for conditional random forest based feature selection (mode= regression or classification)
+>>>>>>> 56db452834ab608b046bc57d12fd906a4f4b4574
 #"pamr": for prediction analysis for microarrays algorithm based on the nearest shrunked centroid method (mode=classification)
 #"MARS": for multiple adaptive regression splines (MARS) based feature selection
 #(mode= regression or classification)

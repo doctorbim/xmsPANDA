@@ -7,7 +7,11 @@ pred.eval.method="BER",globalcor=TRUE,
 target.metab.file=NA,target.mzmatch.diff=10,target.rtmatch.diff=NA,max.cor.num=100, 
 numtrees=20000,analysismode="classification",net_node_colors=c("green","red"), net_legend=TRUE,
 svm_kernel="radial",heatmap.col.opt="redblue",manhattanplot.col.opt=c("darkblue","red3"),boxplot.col.opt=c("grey57"),sample.col.opt="rainbow",rf_selmethod="rankbased",pls_vip_thresh=1,num_nodes=2,max_varsel=100,pls_ncomp=5,pca.stage2.eval=TRUE,scoreplot_legend=TRUE,pca.global.eval=TRUE,rocfeatlist=seq(2,11,1),rocfeatincrement=TRUE,rocclassifier="svm",foldchangethresh=2,wgcnarsdthresh=20,WGCNAmodules=TRUE,optselect=TRUE,max_comp_sel=1,saveRda=TRUE,legendlocation="topleft",pca.cex.val=4,
+<<<<<<< HEAD
 pca.ellipse=FALSE,ellipse.conf.level=0.95,pls.permut.count=1000,svm.acc.tolerance=5,limmadecideTests=TRUE,pls.vip.selection="max",globalclustering=TRUE,plots.res=600,plots.width=8,plots.height=8,plots.type="cairo",output.device.type="pdf",pvalue.thresh=0.05,individualsampleplot.col.opt=NA,pamr.threshold.select.max=FALSE,aggregation.method="RankAggreg",...)
+=======
+pca.ellipse=FALSE,ellipse.conf.level=0.95,permutations.count=1000,svm.acc.tolerance=5,limmadecideTests=TRUE,pls.vip.selection="max",globalclustering=TRUE,plots.res=600,plots.width=8,plots.height=8,plots.type="cairo",output.device.type="pdf",pvalue.thresh=0.05,individualsampleplot.col.opt=NA,pamr.threshold.select.max=FALSE,aggregation.method="RankAggreg",...)
+>>>>>>> 56db452834ab608b046bc57d12fd906a4f4b4574
 {
     
     print("**")
@@ -22,7 +26,11 @@ pca.ellipse=FALSE,ellipse.conf.level=0.95,pls.permut.count=1000,svm.acc.toleranc
     pcacenter=TRUE
     pcascale=TRUE
     alphacol=0.3
+<<<<<<< HEAD
   
+=======
+    pls.permut.count=permutations.count
+>>>>>>> 56db452834ab608b046bc57d12fd906a4f4b4574
     
     # print(is(group.missing.thresh<0.8))
     
@@ -149,8 +157,12 @@ pca.ellipse=FALSE,ellipse.conf.level=0.95,pls.permut.count=1000,svm.acc.toleranc
     c1<-rbind(c1,"pairedanalysis:")
     c2<-rbind(c2,pairedanalysis)
     c1<-rbind(c1,"featselmethod:")
+<<<<<<< HEAD
     
     c2<-rbind(c2,paste(featselmethod,collapse=";"))
+=======
+    c2<-rbind(c2,featselmethod)
+>>>>>>> 56db452834ab608b046bc57d12fd906a4f4b4574
     c1<-rbind(c1,"fdrthresh:")
     c2<-rbind(c2,fdrthresh)
     c1<-rbind(c1,"fdrmethod:")
@@ -290,13 +302,18 @@ for(i in 1:length(featselmethod))
 {
     
                     outloc<-paste(parentoutput_dir,featselmethod[i],sep="/")
+<<<<<<< HEAD
            suppressWarnings(diffexp.res[[i]]<-diffexp.child(Xmat,Ymat,feature_table_file,parentoutput_dir,class_labels_file,num_replicates,feat.filt.thresh,summarize.replicates,summary.method,summary.na.replacement,missing.val,rep.max.missing.thresh,
+=======
+            diffexp.res[[i]]<-diffexp.child(Xmat,Ymat,feature_table_file,parentoutput_dir,class_labels_file,num_replicates,feat.filt.thresh,summarize.replicates,summary.method,summary.na.replacement,missing.val,rep.max.missing.thresh,
+>>>>>>> 56db452834ab608b046bc57d12fd906a4f4b4574
              all.missing.thresh,group.missing.thresh,input.intensity.scale,
             log2transform,medcenter,znormtransform,quantile_norm,lowess_norm,madscaling,rsd.filt.list,
             pairedanalysis,featselmethod[i],fdrthresh,fdrmethod,cor.method,networktype,abs.cor.thresh,cor.fdrthresh,kfold,pred.eval.method,feat_weight,globalcor,
             target.metab.file,target.mzmatch.diff,target.rtmatch.diff,max.cor.num,samplermindex,pcacenter,pcascale,
             numtrees,analysismode,net_node_colors,net_legend,svm_kernel,heatmap.col.opt,manhattanplot.col.opt,boxplot.col.opt,sample.col.opt,alphacol,rf_selmethod,pls_vip_thresh,num_nodes,max_varsel, pls_ncomp=pls_ncomp,pca.stage2.eval=pca.stage2.eval,scoreplot_legend=scoreplot_legend,pca.global.eval=pca.global.eval,rocfeatlist=rocfeatlist,rocfeatincrement=rocfeatincrement,rocclassifier=rocclassifier,foldchangethresh=foldchangethresh,wgcnarsdthresh=wgcnarsdthresh,WGCNAmodules=WGCNAmodules,
             optselect=optselect,max_comp_sel=max_comp_sel,saveRda=saveRda,legendlocation=legendlocation,degree_rank_method=degree_rank_method,pca.cex.val=pca.cex.val,pca.ellipse=pca.ellipse,ellipse.conf.level=ellipse.conf.level,pls.permut.count=pls.permut.count,svm.acc.tolerance=svm.acc.tolerance,limmadecideTests=limmadecideTests,pls.vip.selection=pls.vip.selection,globalclustering=globalclustering,plots.res=plots.res,plots.width=plots.width,plots.height=plots.height,plots.type=plots.type,output.device.type=output.device.type,pvalue.thresh,individualsampleplot.col.opt,pamr.threshold.select.max)
+<<<<<<< HEAD
             
 
             
@@ -327,6 +344,18 @@ if(i==1){
     
     #sort(rankingCriteria, index.return = TRUE)$ix
         ranked_list<-mz_rt_all[sort(tvec,index.return=TRUE)$ix]
+=======
+
+        diffexp.res[[i]]$all_metabs<-diffexp.res[[i]]$all_metabs[order(diffexp.res[[i]]$all_metabs$mz),]
+        mz_rt_all<-paste(diffexp.res[[i]]$all_metabs$mz,"_",diffexp.res[[i]]$all_metabs$time,sep="")
+        tname<-paste("mz_rt_",i,".Rda",sep="")
+        #save(mz_rt_all,file=tname)
+
+if(i==1){
+    
+    #sort(rankingCriteria, index.return = TRUE)$ix
+        ranked_list<-mz_rt_all[sort(diffexp.res[[i]]$all_metabs$diffexp_rank,index.return=TRUE)$ix]
+>>>>>>> 56db452834ab608b046bc57d12fd906a4f4b4574
 }
 
         if(i>1){
@@ -339,7 +368,11 @@ if(i==1){
             common_feat_ind2<-which(mz_rt_2%in%mz_rt_1)
             
             
+<<<<<<< HEAD
             ranked_list<-rbind(ranked_list,mz_rt_all[sort(tvec,index.return=TRUE)$ix])
+=======
+            ranked_list<-rbind(ranked_list,mz_rt_all[sort(diffexp.res[[i]]$all_metabs$diffexp_rank,index.return=TRUE)$ix])
+>>>>>>> 56db452834ab608b046bc57d12fd906a4f4b4574
             
             if(length(common_feat_ind)<1){
              ermsg<-paste("No common significant features found between ",featselmethod[(i-1)]," and ",featselmethod[i],sep="")
@@ -363,16 +396,22 @@ if(i==1){
             
             }
         }
+<<<<<<< HEAD
 }
 }
 
 print("Aggregating ranks")
 print(aggregation.method)
 
+=======
+
+}
+>>>>>>> 56db452834ab608b046bc57d12fd906a4f4b4574
 if(consensus_analysis==TRUE){
         
         
     
+<<<<<<< HEAD
     if(aggregation.method=="RankAggreg" | aggregation.method=="RankAggregGA"){
         # save(ranked_list,file="ranked_list.Rda")
         #save(max_varsel,file="max_varsel.Rda")
@@ -398,6 +437,19 @@ if(consensus_analysis==TRUE){
     
     #save(common_row_index,file="common_row_index.Rda")
     #save(common_feats,file="common_feats.Rda")
+=======
+    if(aggregation.method=="RankAggreg"){
+    save(ranked_list,file="ranked_list.Rda")
+    r1<-RankAggreg(x=ranked_list,k=max_varsel,verbose=TRUE,distance="Spearman",method="CE")
+    
+    #r1<-list(top.list=order(degree_rank))
+    print("Aggregated rank")
+    
+    common_row_index<-which(mz_rt_all%in%r1$top.list)
+    
+    common_feats<-diffexp.res[[i]]$all_metabs[common_row_index,]
+    
+>>>>>>> 56db452834ab608b046bc57d12fd906a4f4b4574
     cnamesd1<-colnames(common_feats)
     time_ind<-which(cnamesd1=="time")
     mz_ind<-which(cnamesd1=="mz")
@@ -718,12 +770,17 @@ ylabel="intensity",cex.val=0.9,sample.col.opt=sample.col.opt)
       }
       
       
+<<<<<<< HEAD
      classlabels_orig<-read.table("../Stage2/classlabels_orig.txt",sep="\t",header=TRUE)
      classlabels_orig<-classlabels_orig[,-c(1)]
      
      #save(list=ls(),file="debuga_lineplots.Rda")
      
  get_lineplots(X=Xmat,Y=classlabels_orig,feature_table_file=NA,parentoutput_dir=getwd(),class_labels_file=NA,sample.col.opt=sample.col.opt, alphacol=0.3,col_vec=col_vec,pairedanalysis=pairedanalysis,pca.cex.val=pca.cex.val,legendlocation=legendlocation,pca.ellipse=pca.ellipse,ellipse.conf.level=ellipse.conf.level,filename="significant")  #,silent=TRUE)
+=======
+     
+ get_lineplots(X=Xmat,Y=Ymat,feature_table_file=NA,parentoutput_dir=getwd(),class_labels_file=NA,sample.col.opt=sample.col.opt, alphacol=0.3,col_vec=col_vec,pairedanalysis=pairedanalysis,pca.cex.val=pca.cex.val,legendlocation=legendlocation,pca.ellipse=pca.ellipse,ellipse.conf.level=ellipse.conf.level,filename="significant")  #,silent=TRUE)
+>>>>>>> 56db452834ab608b046bc57d12fd906a4f4b4574
  }
  
     if(output.device.type!="pdf"){
@@ -793,7 +850,11 @@ return(list("individual.featsel.res"=diffexp.res,"aggregated.res"=common_feats))
     
     }else{
         
+<<<<<<< HEAD
         suppressWarnings(
+=======
+        
+>>>>>>> 56db452834ab608b046bc57d12fd906a4f4b4574
         diffexp.res<-diffexp.child(Xmat,Ymat,feature_table_file,parentoutput_dir,class_labels_file,num_replicates,feat.filt.thresh,summarize.replicates,summary.method,summary.na.replacement,missing.val,rep.max.missing.thresh,
         all.missing.thresh,group.missing.thresh,input.intensity.scale,
         log2transform,medcenter,znormtransform,quantile_norm,lowess_norm,madscaling,rsd.filt.list,
@@ -801,7 +862,11 @@ return(list("individual.featsel.res"=diffexp.res,"aggregated.res"=common_feats))
         target.metab.file,target.mzmatch.diff,target.rtmatch.diff,max.cor.num,samplermindex,pcacenter,pcascale,
         numtrees,analysismode,net_node_colors,net_legend,svm_kernel,heatmap.col.opt,manhattanplot.col.opt,boxplot.col.opt,sample.col.opt,alphacol,rf_selmethod,pls_vip_thresh,num_nodes,max_varsel, pls_ncomp,pca.stage2.eval,scoreplot_legend,pca.global.eval,rocfeatlist,rocfeatincrement,rocclassifier,foldchangethresh,wgcnarsdthresh,WGCNAmodules,
         optselect,max_comp_sel,saveRda,legendlocation,degree_rank_method,pca.cex.val,pca.ellipse,ellipse.conf.level,pls.permut.count,svm.acc.tolerance,limmadecideTests,pls.vip.selection,globalclustering,plots.res,plots.width,plots.height,plots.type,output.device.type,pvalue.thresh,individualsampleplot.col.opt,pamr.threshold.select.max)
+<<<<<<< HEAD
         )
+=======
+        
+>>>>>>> 56db452834ab608b046bc57d12fd906a4f4b4574
         
         suppressWarnings(sink(file=NULL))
         

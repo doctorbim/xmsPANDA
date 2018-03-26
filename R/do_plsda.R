@@ -93,7 +93,11 @@ if(sample.col.opt=="default"){
 
 	}
 
+<<<<<<< HEAD
 print("pls classlabels")
+=======
+print("spls classlabels")
+>>>>>>> 56db452834ab608b046bc57d12fd906a4f4b4574
 print(head(classlabels))
 print(head(Y))
 #Y<-as.numeric(as.factor(Y[,1]))
@@ -235,7 +239,11 @@ print(head(Y))
                                     
                                     if(length(good_feats)>1){
                                         
+<<<<<<< HEAD
                                         cv_res<-try(plsda_cv(v=kfold,x=X[,good_feats],y=Yclass,ncomp=opt_comp,errortype=evalmethod),silent=TRUE)
+=======
+                                        cv_res<-plsda_cv(v=kfold,x=X[,good_feats],y=Yclass,ncomp=opt_comp,errortype=evalmethod)
+>>>>>>> 56db452834ab608b046bc57d12fd906a4f4b4574
                                         
                                         #cv_res<-pls.lda.cv(Xtrain=X, Ytrain=Y,  ncomp=c(1:numcomp), nruncv=kfold, alpha=2/3, priors=NULL)
                                         
@@ -498,6 +506,7 @@ print(head(Y))
         
         if(analysismode=="classification"){
            
+<<<<<<< HEAD
            if(FALSE){
 		if(length(Y)>10){ 
             cv_res<-try(plsda_cv(v=kfold,x=X,y=Y,ncomp=opt_comp,errortype=evalmethod),silent=TRUE)
@@ -510,6 +519,17 @@ print(head(Y))
             print(paste(kfold," CV ", evalmethod, " using top features: ",cv_res,sep=""))
         	}
         }
+=======
+		if(length(Y)>10){ 
+            cv_res<-plsda_cv(v=kfold,x=X,y=Y,ncomp=opt_comp,errortype=evalmethod)
+            
+            print(paste(kfold," CV ", evalmethod, " using all features: ",cv_res,sep=""))
+            
+            cv_res<-plsda_cv(v=kfold,x=X[,good_feats],y=Y,ncomp=opt_comp,errortype=evalmethod)
+            
+            print(paste(kfold," CV ", evalmethod, " using top features: ",cv_res,sep=""))
+        	}
+>>>>>>> 56db452834ab608b046bc57d12fd906a4f4b4574
 	}
         
         

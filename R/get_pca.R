@@ -1,5 +1,9 @@
 get_pca <-
+<<<<<<< HEAD
 function(X,samplelabels,legendlocation="topright",filename=NA,ncomp=5,center=TRUE,scale=TRUE,legendcex=0.5,outloc=getwd(),col_vec=NA,sample.col.opt="default",alphacol=0.3,class_levels=NA,pca.cex.val=3,pca.ellipse=TRUE,ellipse.conf.level=0.5,samplenames=FALSE,do_pca_anova=FALSE,paireddesign=NA){
+=======
+function(X,samplelabels,legendlocation="topright",filename=NA,ncomp=5,center=TRUE,scale=TRUE,legendcex=0.5,outloc=getwd(),col_vec=NA,sample.col.opt="default",alphacol=0.3,class_levels=NA,pca.cex.val=3,pca.ellipse=TRUE,ellipse.conf.level=0.5,samplenames=FALSE,do_pca_anova=FALSE){
+>>>>>>> 56db452834ab608b046bc57d12fd906a4f4b4574
     
     X<-as.matrix(t(X))
     
@@ -34,12 +38,17 @@ function(X,samplelabels,legendlocation="topright",filename=NA,ncomp=5,center=TRU
     ncomp=min(dim(X)[1],dim(X)[2])
     
     #   p1<-pcaMethods::pca(t(X),method="svd",center=TRUE,scale="uv",cv="q2",nPcs=10)
+<<<<<<< HEAD
     if(is.na(paireddesign)==TRUE){
     metabpcaresultlog2allmetabs5pcs<-mixOmics::pca(X,ncomp=ncomp,center=TRUE,scale=TRUE)
     }else{
           metabpcaresultlog2allmetabs5pcs<-mixOmics::pca(X,ncomp=ncomp,center=TRUE,scale=TRUE,multilevel=paireddesign)
           
     }
+=======
+    metabpcaresultlog2allmetabs5pcs<-mixOmics::pca(X,ncomp=ncomp,center=TRUE,scale=TRUE)
+    
+>>>>>>> 56db452834ab608b046bc57d12fd906a4f4b4574
     result<-metabpcaresultlog2allmetabs5pcs
     
 
@@ -184,7 +193,11 @@ if(do_pca_anova==TRUE){
 main_text=paste("Pairwise PC score plots using ",filename," features after preprocessing\np-value for overall differences between groups using PC1 and PC2 in a multivariate\n one-way ANOVA model=",round(pc1_pval,3),sep="")
 }
 
+<<<<<<< HEAD
 print(plotIndiv(result, comp = c(1,2),ind.names = FALSE,col = col, cex = cex[1], pch = c(2), X.label=paste("PC1 (",r1[1],"% variation)",sep=""),Y.label=paste("PC2 (",r1[2],"% variation)",sep=""),title=main_text,add.legend=TRUE,plot.ellipse=pca.ellipse,ellipse.level=ellipse.conf.level,col.per.group=col_per_group,group=samplelabels))
+=======
+print(plotIndiv(result, comp = c(1,2),ind.names = FALSE,col = col, cex = cex, pch = c(2), X.label=paste("PC1 (",r1[1],"% variation)",sep=""),Y.label=paste("PC2 (",r1[2],"% variation)",sep=""),title=main_text,add.legend=TRUE,plot.ellipse=pca.ellipse,ellipse.level=ellipse.conf.level,col.per.group=col_per_group,group=samplelabels))
+>>>>>>> 56db452834ab608b046bc57d12fd906a4f4b4574
     
     
     # scores_res<-result$x
@@ -206,6 +219,7 @@ print(plotIndiv(result, comp = c(1,2),ind.names = FALSE,col = col, cex = cex[1],
     
     #print(res)
 
+<<<<<<< HEAD
 p1<-packageVersion("mixOmics")
 
 mixomics_check<-grep("6.[0-9].[0-9]",p1)
@@ -214,6 +228,8 @@ if(mixomics_check==1){
     
     
 }
+=======
+>>>>>>> 56db452834ab608b046bc57d12fd906a4f4b4574
  
  if(do_pca_anova==TRUE){
  main_text=paste("Pairwise PC score plots using ",filename," features after preprocessing\np-value for overall differences between groups using PC1 and PC3 in a multivariate\n one-way ANOVA model=",round(pc2_pval,3),sep="")

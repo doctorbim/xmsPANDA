@@ -67,6 +67,10 @@ function(xvec,yvec,up_or_down,maintext="",ythresh=0.05,ylab,xlab,colorvec=c("dar
                                 }
     }
     #legend("topleft", "(x,y)", pch = 1, title = "",inset = .05)
+<<<<<<< HEAD
  
  #legend("topleft",c("Higher in GroupA","Lower in GroupB"),col=c(colorvec[1],colorvec[2]),pch=c(24,25),cex=0.5)
+=======
+    #legend("topleft",c("Higher in GroupA","Lower in GroupB"),col=c(colorvec[1],colorvec[2]),pch=c(24,25),cex=0.5)
+>>>>>>> 56db452834ab608b046bc57d12fd906a4f4b4574
 }

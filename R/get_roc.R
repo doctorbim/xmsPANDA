@@ -76,6 +76,7 @@ function(dataA,classlabels,classifier="svm",kname="radial",rocfeatlist=seq(2,10,
     }
     }
     
+<<<<<<< HEAD
     extra_index<-which(featlist>(dim(d1)[1]+1))
     
     if(length(extra_index)>0){
@@ -84,6 +85,8 @@ function(dataA,classlabels,classifier="svm",kname="radial",rocfeatlist=seq(2,10,
     
     #save(featlist,file="featlist.Rda")
     # save(list=ls(),file="debug.Rda")
+=======
+>>>>>>> 56db452834ab608b046bc57d12fd906a4f4b4574
     if(featincrement==TRUE){
         for(n in 1:length(featlist)){
             
@@ -91,6 +94,7 @@ function(dataA,classlabels,classifier="svm",kname="radial",rocfeatlist=seq(2,10,
             
             num_select<-featlist[n]
             
+<<<<<<< HEAD
             # print(num_select)
             #print(d3[1:3,1:5])
             #if(num_select(dim(d1)[1]+1)){
@@ -98,6 +102,15 @@ function(dataA,classlabels,classifier="svm",kname="radial",rocfeatlist=seq(2,10,
                 #num_select<-dim(d1)[1]
                 #}
         
+=======
+            #print(num_select)
+            #print(d3[1:3,1:5])
+            if(num_select>dim(d1)[1]){
+                
+                num_select<-dim(d1)[1]
+            }
+            
+>>>>>>> 56db452834ab608b046bc57d12fd906a4f4b4574
             if(is.na(mainlabel)==TRUE){
                 
                 
@@ -149,7 +162,11 @@ function(dataA,classlabels,classifier="svm",kname="radial",rocfeatlist=seq(2,10,
             
             roc_res<-cbind(stats1a@x.values[[1]],stats1a@y.values[[1]])
             colnames(roc_res)<-c(stats1a@x.name,stats1a@y.name)
+<<<<<<< HEAD
             #  save(roc_res,file="ROCres.rda")
+=======
+            save(roc_res,file="ROCres.rda")
+>>>>>>> 56db452834ab608b046bc57d12fd906a4f4b4574
             x1<-seq(0,1,0.01)
             y1<-x1
             p1<-performance(pred1,"auc")
@@ -196,7 +213,11 @@ function(dataA,classlabels,classifier="svm",kname="radial",rocfeatlist=seq(2,10,
         stats1a <- performance(pred1, 'tpr', 'fpr')
         roc_res<-cbind(stats1a@x.values[[1]],stats1a@y.values[[1]])
         colnames(roc_res)<-c(stats1a@x.name,stats1a@y.name)
+<<<<<<< HEAD
         # save(roc_res,file="ROCres.rda")
+=======
+        save(roc_res,file="ROCres.rda")
+>>>>>>> 56db452834ab608b046bc57d12fd906a4f4b4574
         x1<-seq(0,1,0.01)
         y1<-x1
         p1<-performance(pred1,"auc")
