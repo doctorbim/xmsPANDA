@@ -8,4 +8,4 @@ Maintainer: Karan Uppal <kuppal2@emory.edu>
 Description: This package includes functions to perform biomarker discovery for classification and regression scenarios and to perform correlation based network analysis (all metabolites and/or targeted metabolites eg: glucose metabolism pathway).
 License: GPL2.0
 LazyLoad: yes
-Depends: limma, statmod, rgl, gplots, snow, mixOmics, doSNOW, foreach, e1071, WGCNA, randomForest, party,qvalue,fdrtool, GeneNet, corpcor, earth, pROC, multcomp, RColorBrewer, nlme, pls, plsgenomics, igraph, ROCR, flashClust, data.table, dplyr,plyr,mclust,parallel,RankAggreg,pcaMethods
+Depends: limma, statmod, rgl, gplots, snow, mixOmics, doSNOW, foreach, e1071, WGCNA, randomForest, party,qvalue,fdrtool, GeneNet, corpcor, earth, pROC, multcomp, RColorBrewer, nlme, pls, plsgenomics, igraph, ROCR, flashClust, data.table, dplyr,plyr,mclust,parallel,RankAggreg,pcaMethods, pamr
