@@ -76,14 +76,6 @@ function(dataA,classlabels,classifier="svm",kname="radial",rocfeatlist=seq(2,10,
     }
     }
     
-    extra_index<-which(featlist>(dim(d1)[1]+1))
-    
-    if(length(extra_index)>0){
-        featlist<-featlist[-extra_index]
-    }
-    
-    #save(featlist,file="featlist.Rda")
-    # save(list=ls(),file="debug.Rda")
     if(featincrement==TRUE){
         for(n in 1:length(featlist)){
             
@@ -91,13 +83,13 @@ function(dataA,classlabels,classifier="svm",kname="radial",rocfeatlist=seq(2,10,
             
             num_select<-featlist[n]
             
-            # print(num_select)
+            #print(num_select)
             #print(d3[1:3,1:5])
-            #if(num_select(dim(d1)[1]+1)){
-                #break;
-                #num_select<-dim(d1)[1]
-                #}
-        
+            if(num_select>dim(d1)[1]){
+                
+                num_select<-dim(d1)[1]
+            }
+            
             if(is.na(mainlabel)==TRUE){
                 
                 
