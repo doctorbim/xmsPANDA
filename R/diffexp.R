@@ -309,11 +309,11 @@ if(length(diffexp.res[[i]]$all_metabs)>0){
         
         check_dup_index<-which(duplicated(mz_rt_all)==TRUE)
         
-        save(mz_rt_all,file=tname)
+        #save(mz_rt_all,file=tname)
         
         tname<-paste("rank_",i,".Rda",sep="")
         tvec=diffexp.res[[i]]$all_metabs$diffexp_rank
-        save(tvec,file=tname)
+        #save(tvec,file=tname)
         
         if(length(check_dup_index)>0){
             mz_rt_all<-mz_rt_all[-check_dup_index]

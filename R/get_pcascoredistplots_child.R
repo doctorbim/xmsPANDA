@@ -1,5 +1,5 @@
 get_pcascoredistplots_child <-
-function(X,Y,feature_table_file,parentoutput_dir,class_labels_file,sample.col.opt="rainbow",plots.width=2000,plots.height=2000,plots.res=300, alphacol=0.3,col_vec=NA,pairedanalysis=FALSE,pca.cex.val=4,legendlocation="topright",pca.ellipse=TRUE,ellipse.conf.level=0.5,filename="all")
+function(X,Y,feature_table_file,parentoutput_dir,class_labels_file,sample.col.opt="rainbow",plots.width=2000,plots.height=2000,plots.res=300, alphacol=0.3,col_vec=NA,pairedanalysis=FALSE,pca.cex.val=4,legendlocation="topright",pca.ellipse=TRUE,ellipse.conf.level=0.5,filename="all",paireddesign=NA)
 {
 		
         #print("here")
@@ -198,7 +198,8 @@ patientcolors <- rep(col_vec[1:length(t1)], t1)
 
 #print(head(classlabels_orig))
 
-res<-get_pca(X=data_m,samplelabels=classgroup,legendlocation=legendlocation,filename=filename,ncomp=10,center=TRUE,scale=TRUE,legendcex=0.5,outloc=getwd(),col_vec=col_vec,sample.col.opt=sample.col.opt,alphacol=0.3,class_levels=NA,pca.cex.val=pca.cex.val,pca.ellipse=pca.ellipse,do_pca_anova=do_pca_anova)
+
+res<-get_pca(X=data_m,samplelabels=classgroup,legendlocation=legendlocation,filename=filename,ncomp=10,center=TRUE,scale=TRUE,legendcex=0.5,outloc=getwd(),col_vec=col_vec,sample.col.opt=sample.col.opt,alphacol=0.3,class_levels=NA,pca.cex.val=pca.cex.val,pca.ellipse=pca.ellipse,do_pca_anova=do_pca_anova,paireddesign=paireddesign)
 
 
 
