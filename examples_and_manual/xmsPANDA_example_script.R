@@ -6,9 +6,7 @@ feature_table_file<-"~/Downloads/Mzmine_smokers_nonsmokers_PANDA.txt"
 class_labels_file<-"~/Downloads/classlabels.txt"
 outloc<-"~/Downloads/testpandav1.0.7.3/"
 
-source("/Users/karanuppal/Documents/Emory/JonesLab/Projects/DifferentialExpression/xmsPaNDA/xmsPANDA_v1.0.6.37.R")
 
-#"limma","lmreg","pamr","MARS","rfesvm","pls","RF","logitreg"
 #start: see manual for additional arguments and description
 demetabs_res<-diffexp(
         #1) arguments for input files
@@ -27,7 +25,7 @@ demetabs_res<-diffexp(
         rsd.filt.list = c(0),
 
         ##3) arguments for feature seletion:
-pairedanalysis = FALSE, featselmethod=c("poissonreg","MARS","RF"),
+	pairedanalysis = FALSE, featselmethod=c("limma","pls","lmreg","pamr","rfesvm","RF","logitreg","MARS"),
         pvalue.thresh=0.05,
         fdrthresh = 0.2, fdrmethod="BH",
         kfold=5,networktype="complete",
@@ -37,7 +35,7 @@ pairedanalysis = FALSE, featselmethod=c("poissonreg","MARS","RF"),
         rocclassifier="svm",foldchangethresh=0,
         optselect=TRUE,max_comp_sel=5,saveRda=FALSE,pls.permut.count=100,
         pca.ellipse=TRUE,ellipse.conf.level=0.95,svm.acc.tolerance=5,pamr.threshold.select.max=FALSE,
-        aggregation.method="RankAggreg",mars.gcv.thresh=70,
+        aggregation.method="RankAggreg",mars.gcv.thresh=50,
 
         #4) arguments for WGCNA and global clustering analysis (HCA and EM clustering)
         wgcnarsdthresh=30,WGCNAmodules=FALSE,globalclustering=FALSE,
