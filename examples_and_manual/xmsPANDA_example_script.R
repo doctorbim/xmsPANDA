@@ -4,7 +4,7 @@ library(xmsPANDA)
 
 feature_table_file<-"~/Downloads/Mzmine_smokers_nonsmokers_PANDA.txt"
 class_labels_file<-"~/Downloads/classlabels.txt"
-outloc<-"~/Downloads/testpandav1.0.7.3/"
+outloc<-"~/Downloads/testpandav1.0.7.3B/"
 
 
 #start: see manual for additional arguments and description
@@ -42,7 +42,7 @@ demetabs_res<-diffexp(
 
         #5) arguments for correlation and network analysis using the selected features
         cor.method="spearman", abs.cor.thresh = 0.4, cor.fdrthresh=0.2,
-        globalcor=TRUE,target.metab.file=NA,
+        globalcor=FALSE,target.metab.file=NA,
         target.mzmatch.diff=10,target.rtmatch.diff=NA,max.cor.num=NA,
 
         #6) arguments for graphical options: see manual for additional arguments
