@@ -1,5 +1,0 @@
-"V1"
-"Stage 1 results: Preprocessing (Normalization, transformation)"
-"Stage 2 results: Feature selection & evaluation results (Manhattan plots, PCA, HCA, boxplots, table of significant features, clustering results)"
-"Stage 3 results: Correlation based network analysis"
-"Stage 4 results: Correlation based targeted network analysis"
