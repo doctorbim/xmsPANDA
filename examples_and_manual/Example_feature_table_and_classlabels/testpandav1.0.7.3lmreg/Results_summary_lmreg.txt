@@ -1,2 +1,0 @@
-"RSD.thresh"	"Number of features left after RSD filtering"	"Number of FDR significant features"	"BER-accuracy"	"BER permuted accuracy"	"Score"	"Expected_False_Positives"
-0	99	73	100	55.55	994444.83	15
