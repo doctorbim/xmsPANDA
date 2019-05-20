@@ -254,46 +254,46 @@ See example.
 Maximum number of correlated metabolites to be included in the network
 figure. Default: 100
 }
-\item{pcacenter}{
+  \item{pcacenter}{
 Data centering for PCA. Options: "TRUE" or "FALSE". Default=TRUE
 }
-\item{pcascale}{
+  \item{pcascale}{
 Data scaling for PCA. Options: "TRUE" or "FALSE". Default=TRUE
 }
-\item{samplermindex}{
+  \item{samplermindex}{
 Column index of any additional or irrelevant columns to be deleted.
 Options: "NA" or list of column numbers. eg: c(1,3,4) Default=NA
 }
-\item{numtrees}{
+  \item{numtrees}{
 Number of trees to be used for random forest method. Default=500
 }
-\item{analysismode}{
+  \item{analysismode}{
 "classification" for group-wise comparison (case vs control) or
 "regression" for continuous response variables. Default: "classification"
 }
-\item{net_node_colors}{
+  \item{net_node_colors}{
  Colors of nodes in the correlation networks. Eg: c("pink", "skyblue"), 
 or ("red","green") 
 }
-\item{net_legend}{
+  \item{net_legend}{
 Should the network be displayed for the correlation network? eg:
 TRUE or FALSE
 }
-\item{max_var}{
+  \item{max_var}{
 Max number of variables to be used for sPLS, rfesvm, and Random Forest? 
 eg:150
 }
-\item{svm_kernel}{
+  \item{svm_kernel}{
 SVM kernel eg: "radial" or "linear"
 }
-\item{heatmap.col.opt}{
+  \item{heatmap.col.opt}{
 Color scheme for HCA hetmap eg: "RdBu", "topo", "heat", or "terrain"
 }
-\item{sample.col.opt}{
+  \item{sample.col.opt}{
 Color scheme for PCA and heatmap sample axis 
 eg: "rainbow", "heat" or "topo"
 }
-\item{rf_selmethod}{
+  \item{rf_selmethod}{
 Random forest VIP based selection method. 
 If rankbased option is selected, variables are ranked 
 based on the Variable Importance Measure. 
@@ -302,11 +302,11 @@ absVIMthresh is selected, then all features with VIM greater
 than the absolute value of the lowest VIM are selected.
 eg: "absVIMthresh" or "rankbased"
 }
-\item{pls_vip_thresh}{
+  \item{pls_vip_thresh}{
 Threshold for VIP score from PLS/O1PLS.
 eg: 1
 }
-\item{max_varsel}{
+  \item{max_varsel}{
 Maximum number of variables to keep if "rankbased"
 RF or spls is used. eg: 100
 }
@@ -408,6 +408,7 @@ distance as the distance measure (RankAggreg; Pihur et al. BMC Bioinformatics 20
 \item{mars.gcv.thresh}{
 	Minimum generalized cross-validation value (range: 0 to 100) for
 	a feature to be selected. Default: 10
+}
 }
 \details{
 This function performs data transformation, normalization, FDR analysis using LIMMA, 
