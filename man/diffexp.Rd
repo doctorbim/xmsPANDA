@@ -401,7 +401,6 @@ Options: Consensus: will only keep features that are selected in all methods
 RankAggreg: will use the cross entropy algorithm with Spearman footrule
 distance as the distance measure (RankAggreg; Pihur et al. BMC Bioinformatics 2009)
 }
-aggregation.max.iter=1000,mars.gcv.thresh=10
 \item{aggregation.max.iter}{
 	Maximum number of iterations used in the rank aggregation step.
 	Default: 1000
