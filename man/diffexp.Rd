@@ -405,11 +405,10 @@ aggregation.max.iter=1000,mars.gcv.thresh=10
 \item{aggregation.max.iter}{
 	Maximum number of iterations used in the rank aggregation step.
 	Default: 1000
+}
 \item{mars.gcv.thresh}{
 	Minimum generalized cross-validation value (range: 0 to 100) for
 	a feature to be selected. Default: 10
-}
-
 }
 \details{
 This function performs data transformation, normalization, FDR analysis using LIMMA, 
